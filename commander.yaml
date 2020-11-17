@@ -1,0 +1,36 @@
+# -----------------#
+# Extra test suite #
+# -----------------#
+
+tests:
+    ls can filter on filename:
+        command: ls download-*
+        exit-code: 0
+        stdout:
+            line-count: 2
+            lines:
+                1: download-linux.sh
+                2: download-mac.sh
+    ls can filter on extension:
+        command: ls *.sh
+        exit-code: 0
+        stdout:
+            line-count: 2
+            lines:
+                1: download-linux.sh
+                2: download-mac.sh
+    ls -l shows correct permissions:
+        command: ls -l
+        exit-code: 0
+        stdout:
+            contains:
+                - "-rw-r--r--" # README.md, etc
+                - "-rwxr-xr-x" # commander binary
+    ls -C forces multi-column layout:
+        command: ls -C *.sh
+        exit-code: 0
+        stdout:
+            line-count: 1
+            lines:
+                1: download-linux.sh	download-mac.sh
+

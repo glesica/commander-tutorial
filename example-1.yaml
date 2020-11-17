@@ -1,0 +1,4 @@
+tests:
+  hello world:
+    command: python -c "print('hello world')"
+    stdout: hello world

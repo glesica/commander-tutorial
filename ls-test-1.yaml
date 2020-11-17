@@ -1,0 +1,4 @@
+tests:
+    ls should run successfully:
+        command: ls
+        exit-code: 0

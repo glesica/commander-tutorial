@@ -1,0 +1,14 @@
+tests:
+    ls should run successfully:
+        command: ls
+        exit-code: 0
+    ls should list files:
+        command: ls
+        stdout:
+            contains:
+                - README.md
+    ls should not list hidden files:
+        command: ls
+        stdout:
+            not-contains:
+                - .gitignore

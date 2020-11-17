@@ -1,0 +1,8 @@
+tests:
+    ls should run successfully:
+        command: ls
+        exit-code: 0
+        stdout:
+            contains:
+                - README.md
+
